@@ -162,7 +162,7 @@ func (c Client) UpdateTeam(team *Team) (*Team, *RequestDetails, error) {
 	}
 
 	// Make the request
-	details, err := c.makePublicAPICall("PUT", "v1/team/"+team.Name, bytes.NewBuffer(jsonTeam), nil)
+	details, err := c.makePublicAPICall("PUT", "v1/team/"+team.Slug, bytes.NewBuffer(jsonTeam), nil)
 	if err != nil {
 		return nil, nil, err
 	}
